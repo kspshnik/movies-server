@@ -32,5 +32,9 @@ pixel-perfect_*.*
 *.csv
 *.psd
 *.xd
+
+# IDE configs
 *.code-workspace
+.idea/
+
 .eslintcache
