@@ -6,7 +6,7 @@ const userJoiScheme = Joi.object({
   name: Joi.string()
     .required()
     .custom((value, helper) => {
-      if (!value || value.length === 0) {
+      if (!value || value.length < 2 || value.length > 30) {
         return helper.message('name является обязательным полем');
       }
       return value;
