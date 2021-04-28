@@ -9,7 +9,7 @@
   },
   "type": "module",
   "scripts": {
-    "test": "jest",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
     "start": "node app.js",
     "dev": "nodemon app.js",
     "build": "npm install --only=production"
@@ -36,14 +36,14 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
+    "express-prettier": "^1.0.1",
     "express-winston": "^4.1.0",
     "helmet": "^4.4.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.3",
     "rate-limiter": "^0.2.0",
     "validator": "^13.5.2",
-    "winston": "^3.3.3",
-    "express-prettier": "^1.0.1"
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "eslint": "^7.24.0",
