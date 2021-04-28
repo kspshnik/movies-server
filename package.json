@@ -10,6 +10,7 @@
   "type": "module",
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "test:watch": "jest --watch",
     "start": "node app.js",
     "dev": "nodemon app.js",
     "build": "npm install --only=production"
