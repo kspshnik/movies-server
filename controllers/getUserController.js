@@ -3,7 +3,7 @@ const UserModel = require('../models/UserModel');
 const NotFoundError = require('../errors/NotFoundError');
 
 async function getUserController(req, res, next) {
-  const id = req.params;
+  const id = req.user;
   try {
     const user = await UserModel.findById(id);
 
