@@ -1,4 +1,4 @@
-const isURL = require('validator');
+const { isURL } = require('validator');
 
 const validateUrl = (url) =>
   isURL(url, {
