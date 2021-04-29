@@ -10,11 +10,11 @@ const notFoundController = require('../controllers/notFoundController');
 
 const serverRouter = express();
 
-serverRouter.use('/signup', signUpRouter);
-serverRouter.use('/signin', signInRouter);
+serverRouter.use('/movies/signup/', signUpRouter);
+serverRouter.use('/movies/signin/', signInRouter);
 serverRouter.use(auth);
-serverRouter.use('/movies', moviesRouter);
-serverRouter.use('/users', usersRouter);
-serverRouter.use('/*', notFoundController);
+serverRouter.use('/movies/movies', moviesRouter);
+serverRouter.use('/movies/users', usersRouter);
+serverRouter.use('/movies/*', notFoundController);
 
 module.exports = serverRouter;
