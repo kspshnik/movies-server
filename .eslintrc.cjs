@@ -1,43 +1,34 @@
 module.exports = {
   env: {
-    'browser': false,
-    'node': true,
-    'jest/globals': true,
-    'es6': true,
+    browser: false,
+    node: true,
   },
   parserOptions: {
     ecmaVersion: 12,
-    sourceType: 'module',
     ecmaFeatures: {
       impliedStrict: 'true',
     },
   },
   plugins: [
-    'jest',
     'promise',
     'prettier',
     'editorconfig',
     'regexp',
     'ternary',
-    'jest-formatting',
     'xss',
     'node',
-    'jest-async',
     'jsdoc',
   ],
   extends: [
     'airbnb-base',
-    'plugin:jest/all',
     'plugin:regexp/recommended',
     'plugin:editorconfig/all',
     'plugin:ternary/recommended',
-    'plugin:jest-formatting/strict',
     'plugin:node/recommended',
     'plugin:prettier/recommended',
   ],
 
   rules: {
-    'jest-async/expect-return': 'error',
     'xss/no-mixed-html': 'error',
     'xss/no-location-href-assign': 'error',
     'no-underscore-dangle': [
