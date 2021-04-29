@@ -3,15 +3,16 @@ const UserModel = require('../models/UserModel');
 const NotFoundError = require('../errors/NotFoundError');
 
 async function getUserController(req, res, next) {
-  const id = req.user;
+  const user = req.usr.id;
   try {
-    const user = await UserModel.findById(id);
-
-    if (user) {
-      const { name, email } = user;
+    const usr = await UserModel.findById(user);
+    if (usr) {
+      const { name, email } = usr;
       res.status(200).json({ name, email });
     } else {
-      throw new NotFoundError(`Пользователь с идентификатором ${id} не найден`);
+      throw new NotFoundError(
+        `Пользователь с идентификатором ${user} не найден`,
+      );
     }
   } catch (err) {
     next(err);

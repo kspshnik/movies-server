@@ -5,12 +5,13 @@ const ForbiddenError = require('../errors/ForbiddenError');
 
 async function deleteMovieController(req, res, next) {
   const { id } = req.params;
+  const user = req.usr.id;
   try {
     const movie = await MovieModel.findById(id);
 
     if (!movie) {
       throw new NotFoundError(`Фильм с идентификатором ${id} не найден`);
-    } else if (movie.owner.toString() !== req.user.id) {
+    } else if (movie.owner.toString() !== user) {
       throw new ForbiddenError(
         'Вы не можете удалять фильмы из чужого избранного',
       );
