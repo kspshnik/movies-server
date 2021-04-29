@@ -1,11 +1,8 @@
-import {
-  Schema as MongooseSchema,
-  model as mongooseModel,
-  types as mongooseTypes,
-} from 'mongoose';
-import validateUrl from '../helpers/validateUrl';
+const mongoose = require('mongoose');
 
-const MovieSchema = new MongooseSchema({
+const validateUrl = require('../helpers/validateUrl');
+
+const MovieSchema = new mongoose.Schema({
   country: {
     type: String,
     required: true,
@@ -51,13 +48,13 @@ const MovieSchema = new MongooseSchema({
     },
   },
   owner: {
-    type: mongooseTypes.ObjectId,
+    type: mongoose.Types.ObjectId,
     ref: 'user',
     required: true,
   },
 
   movieId: {
-    type: mongooseTypes.ObjectId,
+    type: mongoose.Types.ObjectId,
     required: true,
   },
   nameRU: {
@@ -70,6 +67,6 @@ const MovieSchema = new MongooseSchema({
   },
   __v: { type: Number, select: false },
 });
-const movieModel = mongooseModel('movie', MovieSchema);
+const movieModel = mongoose.model('movie', MovieSchema);
 
-export default movieModel;
+module.exports = { movieModel };

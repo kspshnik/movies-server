@@ -1,5 +1,5 @@
-import isMongoId from 'validator/es/lib/isMongoId';
+const { isMongoId } = require('validator');
 
 const validateId = (userId) => isMongoId(userId);
 
-export default validateId;
+module.exports = validateId;

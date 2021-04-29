@@ -1,9 +1,9 @@
-import { Joi, celebrate } from 'celebrate';
+const { celebrate } = require('celebrate');
 
-import userJoiScheme from '../joiSchemes/userJoiScheme';
+const userJoiScheme = require('../joiSchemes/userJoiScheme');
 
 const celebrateUser = celebrate({
-  body: Joi.object().keys(userJoiScheme),
+  body: userJoiScheme,
 });
 
-export default celebrateUser;
+module.exports = celebrateUser;

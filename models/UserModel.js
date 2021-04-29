@@ -1,11 +1,11 @@
-import { Schema as MongooseSchema, model as mongooseModel } from 'mongoose';
-import bcrypt from 'bcryptjs';
+const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 
-import validateEmail from '../helpers/validateEmail';
+const validateEmail = require('../helpers/validateEmail');
 
-import NotAuthorizedError from '../errors/NotAuthorizedError';
+const NotAuthorizedError = require('../errors/NotAuthorizedError');
 
-const UserSchema = new MongooseSchema({
+const UserSchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
@@ -43,6 +43,6 @@ UserSchema.statics.testByCredentials = async (email, password) => {
   return user;
 };
 
-const UserModel = mongooseModel('user', UserSchema);
+const UserModel = mongoose.model('user', UserSchema);
 
-export default UserModel;
+module.exports = UserModel;

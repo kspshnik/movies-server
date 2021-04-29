@@ -1,6 +1,6 @@
-import { Joi } from 'celebrate';
+const { Joi } = require('celebrate');
 
-import validateEmail from '../helpers/validateEmail';
+const validateEmail = require('../helpers/validateEmail');
 
 const signUpJoiScheme = Joi.object({
   name: Joi.string()
@@ -31,4 +31,4 @@ const signUpJoiScheme = Joi.object({
     }),
 });
 
-export default signUpJoiScheme;
+module.exports = signUpJoiScheme;

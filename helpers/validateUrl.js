@@ -1,4 +1,4 @@
-import isURL from 'validator/es/lib/isURL';
+const isURL = require('validator');
 
 const validateUrl = (url) =>
   isURL(url, {
@@ -6,4 +6,4 @@ const validateUrl = (url) =>
     protocols: ['http', 'https'],
   });
 
-export default validateUrl;
+module.exports = validateUrl;

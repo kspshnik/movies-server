@@ -1,7 +1,7 @@
-import { Joi } from 'celebrate';
+const { Joi } = require('celebrate');
 
-import validateUrl from '../helpers/validateUrl';
-import validateId from '../helpers/validateId';
+const validateUrl = require('../helpers/validateUrl');
+const validateId = require('../helpers/validateId');
 
 const movieJoiScheme = Joi.object({
   country: Joi.string()
@@ -104,4 +104,4 @@ const movieJoiScheme = Joi.object({
     }),
 });
 
-export default movieJoiScheme;
+module.exports = movieJoiScheme;

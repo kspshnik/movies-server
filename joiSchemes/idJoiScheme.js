@@ -1,6 +1,6 @@
-import { Joi } from 'celebrate';
+const { Joi } = require('celebrate');
 
-import validateId from '../helpers/validateId';
+const validateId = require('../helpers/validateId');
 
 const idJoiScheme = Joi.object({
   id: Joi.string()
@@ -15,4 +15,4 @@ const idJoiScheme = Joi.object({
     }),
 });
 
-export default idJoiScheme;
+module.exports = idJoiScheme;
