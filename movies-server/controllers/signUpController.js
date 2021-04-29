@@ -16,7 +16,7 @@ async function signUpController(req, res, next) {
       );
     }
     const hash = await bcrypt.hash(password, saltRounds);
-    const newUser = UserModel.create({
+    const newUser = await UserModel.create({
       email,
       password: hash,
       name,
