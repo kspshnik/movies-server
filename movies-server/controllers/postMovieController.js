@@ -13,10 +13,10 @@ async function postMovieController(req, res, next) {
     image,
     trailer,
     thumbnail,
-  } = req.params;
-  const { id } = req.user;
+  } = req.body;
+  const { id } = req.usr;
   try {
-    const movie = await MovieModel.create({
+    const newMovie = new MovieModel({
       country,
       description,
       director,
@@ -30,6 +30,7 @@ async function postMovieController(req, res, next) {
       thumbnail,
       owner: id,
     });
+    const movie = await newMovie.save();
     res.status(200).json({
       country: movie.country,
       description: movie.description,

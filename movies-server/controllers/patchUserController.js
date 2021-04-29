@@ -3,7 +3,7 @@ const UserModel = require('../models/UserModel');
 const NotFoundError = require('../errors/NotFoundError');
 
 async function patchUserController(req, res, next) {
-  const { id } = req.user;
+  const { id } = req.usr;
   const { name, email } = req.body;
   try {
     const user = await UserModel.findByIdAndUpdate(
