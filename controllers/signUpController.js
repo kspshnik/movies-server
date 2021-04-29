@@ -21,8 +21,9 @@ async function signUpController(req, res, next) {
       password: hash,
       name,
     });
-    const data = { email: newUser.email, id: newUser._id };
-    res.status(200).json({ data });
+    res
+      .status(200)
+      .json({ name: newUser.name, email: newUser.email, id: newUser._id });
   } catch (err) {
     next(err);
   }
