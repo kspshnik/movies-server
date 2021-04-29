@@ -31,7 +31,7 @@ const UserSchema = new mongoose.Schema({
   __v: { type: Number, select: false },
 });
 
-UserSchema.statics.testByCredentials = async (email, password) => {
+UserSchema.statics.testByCredentials = async function (email, password) {
   const user = await this.findOne({ email }).select('+password');
   if (!user) {
     throw new NotAuthorizedError('Неправильные почта или пароль');
