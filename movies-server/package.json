@@ -10,7 +10,7 @@
   "scripts": {
     "test": "echo 'no tests' && exit -1",
     "start": "node app.js",
-    "dev": "nodemon app.js",
+    "dev": "../node_modules/.bin/nodemon app.js",
     "build": "npm install --only=production"
   },
   "repository": {
