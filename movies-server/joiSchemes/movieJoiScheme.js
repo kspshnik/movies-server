@@ -1,7 +1,6 @@
 const { Joi } = require('celebrate');
 
 const validateUrl = require('../helpers/validateUrl');
-const validateId = require('../helpers/validateId');
 
 const movieJoiScheme = Joi.object({
   country: Joi.string()
@@ -76,15 +75,14 @@ const movieJoiScheme = Joi.object({
       }
       return value;
     }),
-  movieId: Joi.string()
+  movieId: Joi.number()
+    .integer()
+    .positive()
     .required()
-    .custom((value, helper) => {
-      if (!validateId(value)) {
-        return helper.message(
-          `movieId: ${value} не является действительным идентификатором`,
-        );
-      }
-      return value;
+    .messages({
+      'number.base': 'movieId должно быть целым положительным числом',
+      'number.integer': 'movieId должно быть целым положительным числом',
+      'number.positive': 'movieId должно быть целым положительным числом',
     }),
   nameRU: Joi.string()
     .required()
