@@ -12,8 +12,7 @@ const UserSchema = new mongoose.Schema({
     unique: true,
     validate: {
       validator: validateEmail,
-      message: (props) =>
-        `${props.value} не является корректным адресом электронной почты`,
+      message: (props) => `${props.value} не является корректным адресом электронной почты`,
     },
   },
 
