@@ -11,7 +11,8 @@
     "test": "echo 'no tests' && exit -1",
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "build": "npm install --only=production"
+    "build": "npm install --only=production",
+    "rebuild": "git pull &&  rsync -urvz * /home/servers/movies-server && pm2 restart 1"
   },
   "repository": {
     "type": "git",
