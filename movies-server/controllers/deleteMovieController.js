@@ -16,7 +16,7 @@ async function deleteMovieController(req, res, next) {
         'Вы не можете удалять фильмы из чужого избранного',
       );
     } else {
-      await MovieModel.findByIdAndDelete(id);
+      await movie.remove(); // MovieModel.findByIdAndDelete(id);
       res.status(200).json({
         message: `Фильм с идентификатором ${id} успешно удалён из избранного`,
       });
