@@ -30,7 +30,7 @@
   "homepage": "https://github.com/kspshnik/movies-service#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.0",
+    "body-parser": "^1.19.1",
     "celebrate": "^14.0.0",
     "cors": "^2.8.5",
     "dont-sniff-mimetype": "^1.1.0",
