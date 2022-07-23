@@ -40,7 +40,7 @@
     "express-html-sanitizer": "^1.0.1",
     "express-mongo-sanitize": "^2.0.2",
     "express-prettier": "^1.0.1",
-    "express-rate-limit": "^5.2.6",
+    "express-rate-limit": "^5.5.1",
     "express-winston": "^4.1.0",
     "express-xss-sanitizer": "^1.1.0",
     "helmet": "^4.4.1",
